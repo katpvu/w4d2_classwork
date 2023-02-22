@@ -1,4 +1,5 @@
 class Piece
+    attr_reader :color, :board
     attr_accessor :pos
 
     def initialize (color, board, pos)
@@ -8,7 +9,7 @@ class Piece
     end
 
     def to_s
-        
+        print "#{self.symbol}"
     end
 
     def empty?
@@ -17,6 +18,9 @@ class Piece
 
     def valid_moves
         #possible moves a piece can have based on MOVES[ ]
+        #select possible_attacks from (pawns/etc.)
+
+        #ask input / output
     end
 
     private

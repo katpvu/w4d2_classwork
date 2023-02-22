@@ -33,7 +33,7 @@ class Board
     # def add_piece(piece, pos)
     #     # populate board with initial pieces in row 0 & 7
     #     if valid_pos?(pos)
-    
+
     #     #     end
     #     # end
 
@@ -78,7 +78,7 @@ class Board
         (0...grid.length).each do |row|
             (0...grid.length).each do |col|
                 if row.between?(2,5)
-                    grid[row][col] = NullPiece.new
+                    grid[row][col] = NullPiece.instance 
                     count_np += 1
                 else
                     grid[row][col] = Piece.new
@@ -87,7 +87,7 @@ class Board
             end
         end
         p count_np
-        p count_p 
+        p count_p
     end
 end
 

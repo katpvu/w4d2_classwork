@@ -15,6 +15,8 @@ class Knight < Piece
 
   def move_diffs
     # return an array of diffs representing where a Knight can step to
-    
+    [
+      [2,1], [2,-1], [-2,1], [-2,-1], [1,2], [1,-2], [-1,2], [-1,-2]
+    ]
   end
 end
