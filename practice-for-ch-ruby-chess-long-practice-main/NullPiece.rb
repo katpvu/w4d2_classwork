@@ -1,7 +1,7 @@
 require_relative "Piece.rb"
 
-class NullPiece < Piece 
+class NullPiece < Piece
     def initialize
-        
-    end 
-end 
+    
+    end
+end

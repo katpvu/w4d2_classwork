@@ -1,22 +1,33 @@
-class Piece 
-    attr_accessor :pos 
+require_relative "cursor.rb"
 
-    def initialize(color, board, pos)
+class Piece
+    attr_reader :pos
+
+    def initialize (color, board, pos)
         @color = color
-        @board = board 
-        @pos = pos 
-    end 
+        @board = board
+        @pos = pos
+    end
 
-    def to_s 
+    def pos=(val)
 
-    end 
+    end
 
-    def empty? 
-        self.pos.nil? 
-    end 
+    def to_s
 
-    def valid_moves 
+    end
+
+    def empty?
+        self.pos.nil?
+    end
+
+    def valid_moves
         #possible moves a piece can have based on MOVES[ ]
-    end 
+    end
 
-end 
+    private
+    def move_into_check?(end_pos)
+
+    end
+
+end
