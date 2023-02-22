@@ -6,11 +6,11 @@ class Pawn < Piece
   end
 
   def symbol
-
+    "p".colorize(color)
   end
 
-  def moves
-
+  def moves(pos, color)
+    [forward_steps(pos,color)] + side_attacks(pos,color)
   end
 
   def at_start_row?(pos)
@@ -28,10 +28,12 @@ class Pawn < Piece
     end
   end
 
-  def forward_steps(pos)
+  def forward_steps(pos, color)
     direction = forward_dir(pos, color)
     steps = at_start_row?(pos) ? 2 : 1
-    steps * direction
+    x = pos[0]
+    y = steps * direction
+    new_pos = [x, y]
   end
 
   def side_attacks(pos, color)
