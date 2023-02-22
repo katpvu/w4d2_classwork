@@ -1,5 +1,4 @@
-require_relative "Piece.rb"
-require_relative "NullPiece.rb"
+require_relative "pieces"
 
 class Board
     attr_reader :grid
@@ -28,16 +27,13 @@ class Board
 
     def valid_pos?(pos)
     # checking if pos is within 0..7 && empty?
-        pos.all? { |coord| coord.between?(0,7) } && grid[pos].kind_of?(NullPiece)
+        pos.all? { |coord| coord.between?(0,7) } #&& grid[pos].kind_of?(NullPiece)
     end
 
     # def add_piece(piece, pos)
     #     # populate board with initial pieces in row 0 & 7
     #     if valid_pos?(pos)
-
-
-
-
+    
     #     #     end
     #     # end
 
