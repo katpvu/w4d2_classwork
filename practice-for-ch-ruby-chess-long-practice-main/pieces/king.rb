@@ -3,9 +3,6 @@ require_relative 'stepable'
 
 class King < Piece
   include Stepable
-  def initialize
-    super
-  end
 
   def symbol
     '♚'.colorize(color)

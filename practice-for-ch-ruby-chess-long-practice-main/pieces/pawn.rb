@@ -1,10 +1,6 @@
 require_relative "Piece.rb"
 
 class Pawn < Piece
-  def initialize
-    super
-  end
-
   def symbol
     "p".colorize(color)
   end
@@ -21,9 +17,9 @@ class Pawn < Piece
   #check position and color (white => -1, black => 1)
   def forward_dir(pos, color)
     case piece.color
-    when :black
-      return 1
     when :white
+      return 1
+    when :black
       return -1
     end
   end

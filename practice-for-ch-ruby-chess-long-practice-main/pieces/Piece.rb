@@ -21,6 +21,9 @@ class Piece
         #select possible_attacks from (pawns/etc.)
 
         #ask input / output
+
+        #calls moves => ultimate moves
+        moves.reject { |move| }
     end
 
     private
