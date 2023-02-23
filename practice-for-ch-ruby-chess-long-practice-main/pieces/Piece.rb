@@ -26,9 +26,15 @@ class Piece
         moves.reject { |move| }
     end
 
+    def inspect
+        self.class
+    end
+
     private
     def move_into_check?(end_pos)
 
     end
+
+
 
 end

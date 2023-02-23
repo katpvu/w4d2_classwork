@@ -72,20 +72,24 @@ class Board
 
     private
 
+    def test_add
+        grid[0,0] = Pawn.new(:black, self, [row, col])
+    end
+
     def populate
         (0...grid.length).each do |row|
-            case row
-            when 0
+            if row == 0
+            # when 0
                 add_first_and_last_rows(:black, row)
-            when 1
+            elsif row == 1
                 (0...grid.length).each do |col|
-                    grid([row,col]) = Pawn.new(:black, self, [row,col])
+                    self[[row, col]] = Pawn.new(:black, self, [row, col])
                 end
-            when 6
+            elsif row == 6
                 (0...grid.length).each do |col|
-                    grid([row,col]) = Pawn.new(:white, self, [row,col])
+                    self[[row, col]] = Pawn.new(:white, self, [row, col])
                 end
-            when 7
+            elsif row == 7
                 add_first_and_last_rows(:white, row)
             end
         end
@@ -94,20 +98,22 @@ class Board
     def add_first_and_last_rows(color, row)
         (0..7).each do |col|
             if col == 0 || col == 7
-                grid([row,col]) = Rook.new(color, self, [row, col])
+                self[[row, col]] = Rook.new(color, self, [row, col])
             elsif col == 1 || col == 6
-                grid([row,col]) = Knight.new(color, self, [row, col])
+                self[[row, col]] = Knight.new(color, self, [row, col])
             elsif col == 2 || col == 5
-                grid([row,col]) = Bishop.new(color, self, [row, col])
+                self[[row, col]] = Bishop.new(color, self, [row, col])
             elsif col == 3
-                grid([row,col]) = King.new(color, self, [row,col])
+                self[[row, col]] = King.new(color, self, [row, col])
             elsif col == 4
-                grid([row,col]) = Queen.new(color, self, [row,col])
+                self[[row, col]] = Queen.new(color, self, [row, col])
             end
         end
     end
 
-
+    # def inspect
+    #     puts "board"
+    # end
 
 end
 
